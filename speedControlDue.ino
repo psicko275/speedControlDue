@@ -40,26 +40,25 @@ void loop() {
 
   rPID.Compute();
   lPID.Compute();
-  //motorGo(0, CW, 254);
-  setMotorLeft((uint8_t)abs(0), MOTOR_FRONT);
-  setMotorRight((uint8_t)abs(0), MOTOR_FRONT);
- /* 
+//  motorGo(0, CW, 254);
+//  setMotorLeft((uint8_t)abs(0), MOTOR_FRONT);
+//  setMotorRight((uint8_t)abs(0), MOTOR_FRONT);
+ 
   if (rPWM >= 0){
-    //setMotorRight((uint8_t)abs(rPWM), MOTOR_FRONT);
-    motorGo(0, CW, (uint8_t)abs(rPWM));
+    setMotorRight((uint8_t)abs(rPWM), MOTOR_FRONT);
+    //motorGo(0, CW, (uint8_t)abs(rPWM));
   } else{
-    //setMotorRight((uint8_t)abs(rPWM), MOTOR_BACK);
-    motorGo(0, CCW, (uint8_t)abs(rPWM));
+    setMotorRight((uint8_t)abs(rPWM), MOTOR_BACK);
+    //motorGo(0, CCW, (uint8_t)abs(rPWM));
   }
 
   if (lPWM >= 0){
-    motorGo(1, CW, (uint8_t)abs(lPWM));
-    //setMotorLeft((uint8_t)abs(lPWM), MOTOR_FRONT);
+    //motorGo(1, CW, (uint8_t)abs(lPWM));
+    setMotorLeft((uint8_t)abs(lPWM), MOTOR_FRONT);
   } else{
-    //setMotorLeft((uint8_t)abs(lPWM), MOTOR_BACK);
-    motorGo(1,CCW, (uint8_t)abs(lPWM));
-  }
-*/  
+    setMotorLeft((uint8_t)abs(lPWM), MOTOR_BACK);
+    //motorGo(1,CCW, (uint8_t)abs(lPWM));
+  }  
 
 //  motorGo(0, CW, 255);
 //  motorGo(1, CW, 255);

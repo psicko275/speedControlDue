@@ -6,7 +6,7 @@
 #include <std_msgs/Int16MultiArray.h>
 #include <std_msgs/UInt16MultiArray.h>
 #include <std_msgs/Float32MultiArray.h>
-#include <geometry_msgs/Twist.h>
+//#include <geometry_msgs/Twist.h>
 
 ros::NodeHandle  nh;
 
@@ -49,19 +49,21 @@ ros::Publisher uControl("uControl",&uControl_msg);
 void setpoint_f_cb(const std_msgs::Float32MultiArray& setpoint_msg){
 //  analogWrite(RIGHT_MOT_EN, setpoint_msg.data[0]);
 //  analogWrite(LEFT_MOT_EN, setpoint_msg.data[1]);
-//  analogWrite(13, abs((int16_t)setpoint_msg.data[1]));
+  analogWrite(13, abs((int16_t)setpoint_msg.data[1]));
     rsetPoint=setpoint_msg.data[0];
     lsetPoint=setpoint_msg.data[1];
 }
 
 ros::Subscriber<std_msgs::Float32MultiArray> setpoint_f("setPoint_f", setpoint_f_cb);
 
+/*
 void cmd_vel_cb(const geometry_msgs::Twist& cmd_vel_msg){
   //TODO: calcular las velocidades de las ruedas a partir de la
   //      velocidad del robot
 }
 
 ros::Subscriber<geometry_msgs::Twist> cmd_vel_sub("cmd_vel", cmd_vel_cb);
+*/
 //////////////////////////////////////--- initROS ---//////////////////////////////////////
 
 void initROS(){

@@ -81,9 +81,10 @@ double rsetPoint = 0.0, lsetPoint = 0.0;
 
 //-------------- Compute odometry ----------------//
 //Robot Hardware
-#define WHEELRAD 0.045 //[m] The radius of the wheel
-#define WHEELDIST 0.42 //[m] Distance between wheels
+#define WHEELRAD 0.052 //[m] The radius of the wheel
+#define WHEELDIST 0.264 //[m] Distance between wheels
 #define CM 2*PI*WHEELRAD/ENCODER_PULSES   //const encoder pulse/Linear displacement
+
 float theta = 0;
 float x = 0;
 float y = 0;
